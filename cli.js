@@ -2,18 +2,21 @@
 
 const [,, ...args] = process.argv
 
-const { spawn } = require('child_process');
-const bat = spawn('cmd.exe', ['/c', 'main.bat']);
+function Process() {
+	const process = require('child_process');
+	var ls = process.spawn('main.bat');
+	ls.stdout.on('data', function (data) {
+			console.log(data);
+	});
+	ls.stderr.on('data', function (data) {
+			console.log(data);
+	});
+	ls.on('close', function (code) {
+			if (code == 0)
+					console.log('Stop');
+			else
+					console.log('Start');
+	});
+};
 
-bat.stdout.on('data', (data) => {
-  console.log(data.toString());
-});
-
-bat.stderr.on('data', (data) => {
-  console.error(data.toString());
-});
-
-bat.on('exit', (code) => {
-  console.log(`Child exited with code ${code}`);
-});
-
+Process();
