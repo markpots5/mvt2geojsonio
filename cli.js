@@ -2,12 +2,6 @@
 
 const [,, ...args] = process.argv
 
-const { exec } = require('child_process');
+const { spawn } = require('child_process');
+const bat = spawn('cmd.exe', ['/c', 'main.bat']);
 
-exec(`main.bat ${args[0]}`, (err, stdout, stderr) => {
-  if (err) {
-    console.error(err);
-    return;
-  }
-  console.log(stdout);
-});
