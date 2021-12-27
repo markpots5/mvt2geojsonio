@@ -1,2 +1,3 @@
 SET file=%1
-vt2geojson %file% | geojsonio
+REM vt2geojson %file% | geojsonio
+echo hi
