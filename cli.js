@@ -2,21 +2,13 @@
 
 const [,, ...args] = process.argv
 
-function Process() {
-	const process = require('child_process');
-	var ls = process.spawn('main.bat');
-	ls.stdout.on('data', function (data) {
-			console.log(data);
-	});
-	ls.stderr.on('data', function (data) {
-			console.log(data);
-	});
-	ls.on('close', function (code) {
-			if (code == 0)
-					console.log('Stop');
-			else
-					console.log('Start');
-	});
-};
+var vt2geojson = require('@mapbox/vt2geojson');
 
-Process();
+// remote file
+vt2geojson({
+    uri: args[0]
+}, function (err, result) {
+    if (err) throw err;
+    console.log(result);
+});
+
