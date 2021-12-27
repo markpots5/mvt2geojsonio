@@ -1,6 +1,6 @@
 {
   "name": "mvt2geojsonio",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "Shoot mapbox vector tile (mvt.) from URL or a file directly into https://geojson.io",
   "main": "main.bat",
   "scripts": {
@@ -21,6 +21,6 @@
     "geojsonio-cli": "^0.2.3"
   },
   "bin": {
-    "mvt2geojsonio": "./cli.js"
+    "mvt2geojsonio": "main.bat"
   }
 }

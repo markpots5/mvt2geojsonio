@@ -1,3 +1,4 @@
+
+
 SET file=%1
-REM vt2geojson %file% | geojsonio
-echo hi
+npx vt2geojson %file% | npx geojsonio
