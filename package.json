@@ -19,5 +19,8 @@
   "dependencies": {
     "@mapbox/vt2geojson": "^1.1.5",
     "geojsonio-cli": "^0.2.3"
+  },
+  "bin": {
+    "mvt2geojsonio": "./cli.js"
   }
 }
